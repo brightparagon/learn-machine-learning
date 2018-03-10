@@ -2,3 +2,5 @@
 ./mnist/mnist/
 *.ipynb
 ipynb_checkpoints
+
+.idea/
