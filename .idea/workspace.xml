@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0af2569-c52b-49dc-9bab-fa35a599d56c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/learn-machine-learning.iml" afterPath="$PROJECT_DIR$/.idea/learn-machine-learning.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e0af2569-c52b-49dc-9bab-fa35a599d56c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +21,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="np-test-calc.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="np-test-calc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/numpy-and-pandas/np-test-calc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="288">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pd-test-normalize.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/numpy-and-pandas/pd-test-normalize.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,6 +55,7 @@
         <option value="$PROJECT_DIR$/numpy-and-pandas/pd-test-sort.py" />
         <option value="$PROJECT_DIR$/numpy-and-pandas/pd-test-transpose.py" />
         <option value="$PROJECT_DIR$/numpy-and-pandas/np-test-calc.py" />
+        <option value="$PROJECT_DIR$/numpy-and-pandas/pd-test-normalize.py" />
       </list>
     </option>
   </component>
@@ -211,10 +218,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/numpy-and-pandas/np-test-calc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/numpy-and-pandas/pd-test-sort.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -227,10 +242,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/numpy-and-pandas/np-test-calc.py">
+    <entry file="file://$PROJECT_DIR$/numpy-and-pandas/pd-test-normalize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="378">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
