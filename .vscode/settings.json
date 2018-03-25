@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "/Users/brightparagon/.local/share/virtualenvs/learn-machine-learning-tfVb6lkJ/bin/python"
+  "python.pythonPath": "/Users/brightparagon/.local/share/virtualenvs/learn-machine-learning-tfVb6lkJ/bin/python",
+  "git.ignoreLimitWarning": true
 }
