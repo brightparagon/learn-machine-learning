@@ -1,6 +1,6 @@
-.vscode/
-./mnist/mnist/
-
-.idea/
+.vscode
+.idea
 *.model
 *.wakati
+
+101_ObjectCategories/
