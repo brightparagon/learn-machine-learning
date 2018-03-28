@@ -2,5 +2,6 @@
 .idea
 *.model
 *.wakati
+*.npy
 
 101_ObjectCategories/
