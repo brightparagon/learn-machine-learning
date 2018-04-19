@@ -7,3 +7,5 @@
 101_ObjectCategories/
 deep-learning/image/gyudon/image/
 tensorflow-tutorial/image-recognition/models/
+deep-learning/tensorflow/mnist/log_dir
+deep-learning/tensorflow/mnist/mnist
