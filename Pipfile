@@ -16,6 +16,7 @@ gensim = "*"
 "beautifulsoup4" = "*"
 konlpy = "*"
 jupyter = "*"
+matplotlib = "*"
 
 
 [requires]
