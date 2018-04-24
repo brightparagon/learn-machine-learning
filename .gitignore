@@ -11,3 +11,4 @@ deep-learning/tensorflow/mnist/log_dir
 deep-learning/tensorflow/mnist/mnist
 tensorflow-tutorial/mnist/MNIST_data
 machine-learning/mnist/mnist
+python-numpy-to-cnn/dataset
