@@ -25,8 +25,9 @@ for i in range(iters_num): # iterate 10,000 times
   x_batch = x_train[batch_mask]
   t_batch = t_train[batch_mask]
 
-  # calculate gradients
-  grad = network.numerical_gradient(x_batch, t_batch)
+  # calculate gradients in a numerical way
+  # grad = network.numerical_gradient(x_batch, t_batch)
+  grad = network.gradient(x_batch, t_batch)
 
   # update weights
   for key in ('W1', 'b1', 'W2', 'b2'): # tuple is also iterable in python
@@ -43,7 +44,8 @@ for i in range(iters_num): # iterate 10,000 times
     test_acc = network.accuracy(x_test, t_test)
     train_acc_list.append(train_acc)
     test_acc_list.append(test_acc)
-    print("train acc, test acc | " + str(train_acc) + ", " + str(test_acc))
+    # print("train acc, test acc | " + str(train_acc) + ", " + str(test_acc))
+    print(train_acc, test_acc)
 
 # print("test case: " + network.predict(x_test[0]))
 # print("answer: " + t_test[0])

@@ -72,7 +72,7 @@ class TwoLayerNet:
 
     # backward propagation
     dout = 1
-    dout self.lastLayer.backward(dout)
+    dout = self.lastLayer.backward(dout)
 
     layers = list(self.layers.values())
     layers.reverse()
@@ -86,7 +86,7 @@ class TwoLayerNet:
     grads['W2'] = self.layers['Affine2'].dW
     grads['b2'] = self.layers['Affine2'].db
 
-    return gradss
+    return grads
 
 net = TwoLayerNet(input_size=784, hidden_size=100, output_size=10)
 # print(net.params['W1'].shape)
