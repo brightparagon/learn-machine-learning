@@ -1,3 +1,5 @@
+# tensorflow gitbook tutorial advanced
+
 # previous one with InteractiveSession
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
