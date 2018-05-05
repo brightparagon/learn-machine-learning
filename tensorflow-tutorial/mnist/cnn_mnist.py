@@ -13,18 +13,19 @@ tf.logging.set_verbosity(tf.logging.INFO)
 def cnn_model_fn(features, labels, mode):
   """Model function for CNN."""
   # Input Layer
-  # batch_size: 1 -> dinamically computed based on the number of data
+  # batch_size: -1 -> dinamically computed based on the number of data
   input_layer = tf.reshape(features["x"], [-1, 28, 28, 1])
 
   # Convolutional Layer #1
   conv1 = tf.layers.conv2d(
       inputs=input_layer,
-      filters=32,
-      kernel_size=[5, 5],
-      padding="same",
-      activation=tf.nn.relu)
+      filters=32, # the number of filters
+      kernel_size=[5, 5], # the size of filters
+      padding="same", # not change the size of output images
+      activation=tf.nn.relu) # use relu as an activation function
 
   # Pooling Layer #1
+  # make output smaller: extract features
   pool1 = tf.layers.max_pooling2d(inputs=conv1, pool_size=[2, 2], strides=2)
 
   # Convolutional Layer #2 and Pooling Layer #2
@@ -47,9 +48,10 @@ def cnn_model_fn(features, labels, mode):
 
   predictions = {
       # Generate predictions (for PREDICT and EVAL mode)
-      "classes": tf.argmax(input=logits, axis=1),
+      "classes": tf.argmax(input=logits, axis=1), # similar to numpy's argmax function
       # Add `softmax_tensor` to the graph. It is used for PREDICT and by the
       # `logging_hook`.
+      # softmax gives us the probabilities of how much the result would be the right answer
       "probabilities": tf.nn.softmax(logits, name="softmax_tensor")
   }
 
@@ -83,10 +85,13 @@ def main(unused_argv):
   eval_labels = np.asarray(mnist.test.labels, dtype=np.int32)
 
   # Create the Estimator
+  # cnn_model_fn is the function we make above in this python file
+  # and the result model is saved in the directory: model_dir
   mnist_classifier = tf.estimator.Estimator(
     model_fn=cnn_model_fn, model_dir="/tmp/mnist_convnet_model")
 
   # Set up logging for predictions
+  # save log data every fifty iteration of training
   tensors_to_log = {"probabilities": "softmax_tensor"}
   logging_hook = tf.train.LoggingTensorHook(
     tensors=tensors_to_log, every_n_iter=50)

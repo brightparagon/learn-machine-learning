@@ -11,13 +11,13 @@ class SimpleConvNet:
     conv_param={'filter_num': 30, 'filter_size': 5, 'pad': 0, 'stride': 1},
     hidden_size=100, output_size=10, weight_init_std=0.01):
 
-    filter_num = conv_param['filter_num']
-    filter_size = conv_param['filter_size']
-    filter_pad = conv_param['filter_pad']
-    filter_stride = conv_param['filter_stride']
-    input_size = input_dim[1]
-    conv_output_size = (input_size - filter_size + 2*filter_pad) / filter_stride + 1
-    pool_output_size = int(filter_num * (conv_output_size/2) * (conv_output_size/2))
+    filter_num = conv_param['filter_num'] # filter num like 30
+    filter_size = conv_param['filter_size'] # filter size like 5 x 5
+    filter_pad = conv_param['filter_pad'] # filter pad
+    filter_stride = conv_param['filter_stride'] # filter stride
+    input_size = input_dim[1] # 28
+    conv_output_size = (input_size - filter_size + 2*filter_pad) / filter_stride + 1 # form of conv output feature map like 16 x 16
+    pool_output_size = int(filter_num * (conv_output_size/2) * (conv_output_size/2)) # form of pool output feature map like 16 x 16
 
     # initialize weights
     self.params = {}
@@ -32,7 +32,7 @@ class SimpleConvNet:
     self.params['b3'] = np.zeros(output_size)
 
     # construct layers using ordered dictionary
-    self.layers = OrderedDict()
+    self.layers = OrderedDict() # easier to be reversed because it is ordered when doing back propagation
     self.layers['Conv1'] = Convolution(self.params['W1'], self.params['b1'], conv_param['stride'], conv_param['pad'])
     self.layers['Relu1'] = Relu()
     self.layers['Pool1'] = Pooling(pool_h=2, pool_w=2, stride=2)
@@ -43,11 +43,13 @@ class SimpleConvNet:
     self.last_layer = SoftmaxWithLoss()
 
   def predict(self, x):
+    # data flows through layers and the result would be one hot label or the max index
     for layer in self.layers.values():
       x = layer.forward(x)
     return x
   
   def loss(self, x, t):
+    # y is the result and last_layer.forward gets the degree how this result is wrong compared to the answer label
     y = self.predict(x)
     return self.last_layer.forward(y, t)
 
@@ -59,6 +61,7 @@ class SimpleConvNet:
     dout = 1
     dout = self.last_layer.backward(dout)
 
+    # easy to reverse it because of ordered dictionary
     layers = list(self.layers.values())
     layers.reverse()
     for layer in layers:
@@ -66,6 +69,7 @@ class SimpleConvNet:
 
     # save the result
     grads = {}
+    # each weight is saved in its layer like convolution, relu, affine, etc.
     grads['W1'] = self.layers['Conv1'].dW
     grads['b1'] = self.layers['Conv1'].db
     grads['W2'] = self.layers['Affine1'].dW
