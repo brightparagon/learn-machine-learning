@@ -12,7 +12,7 @@ nums = 10 # category 0~9
 x = tf.placeholder(tf.float32, shape=(None, pixels), name="x") # image data
 y_ = tf.placeholder(tf.float32, shape=(None, nums), name="y_") # label data
 
-# function that inits weight and bias
+# function that initializes weight and bias
 def weight_variable(name, shape):
   W_init = tf.truncated_normal(shape, stddev=0.1)
   W = tf.Variable(W_init, name="W_"+name)
